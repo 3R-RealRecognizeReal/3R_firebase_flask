@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <title>Frame_1</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400"/>
+    <link rel="stylesheet" href="styles/frame1.css"/>
+</head>
+<body>
+<div class="frame1-HLC">
+    <div class="divmain-pUY">
+        <div class="auto-group-1pbv-5Yt">
+            <p class="r-engine-tester-oUt">3R Engine Tester</p>
+            <div class="divblock-6Tz">
+                <div class="inputblock-F5z">
+                    <p class="subject-Cmv">Subject</p>
+                    <label for="file">
+                        <div class="imginslot-Usr">파일 업로드하기</div>
+                    </label>
+                    <input id= "file" class="imginslot-Usr" type="file" accept="image/*" onchange="setThumbnail(event);"/>
+                    <script>
+                        function setThumbnail(event) {
+                            const reader = new FileReader();
+
+                            reader.onload = function (event) {
+                                const img = document.createElement("img");
+                                img.setAttribute("src", event.target.result);
+                                document.querySelector("div#image_container").appendChild(img);
+                            };
+
+                            reader.readAsDataURL(event.target.files[0]);
+                        }
+                    </script>
+                </div>
+                <div class="ctgryblock-NiL">
+                    <p class="subject-category-uyA">Subject Category</p>
+                    <div class="categoryslot-qbv">
+                    </div>
+                </div>
+                <div class="msgblock-Au6">
+                    <p class="message-jhJ">Message</p>
+                    <textarea class="msgslot-e3a">
+          </textarea>
+                </div>
+            </div>
+            <div class="divbtn-ZAY">
+                <div class="savebtn-uEQ">Save Result</div>
+                <div class="cancelbtn-xiU">Cancel</div>
+                <div class="resetbtn-2TS">Reset</div>
+            </div>
+        </div>
+        <div class="auto-group-qteq-uGL">
+            <div class="inputimg-di8">
+                <div class="inputimgtmb-Z5z" id="image_container">
+                </div>
+            </div>
+            <div class="outputimg-6Lp">
+                <div class="outputimgtmb-dbe">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
